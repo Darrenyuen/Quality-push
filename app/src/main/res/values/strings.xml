@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">干货</string>
+
+    <string name="tab_name_1">推荐</string>
+    <string name="tab_name_2">搜索</string>
+    <string name="tab_name_3">趣读</string>
+</resources>
