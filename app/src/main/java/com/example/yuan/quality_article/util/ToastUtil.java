@@ -1,4 +1,4 @@
-package com.example.yuan.quality_article;
+package com.example.yuan.quality_article.util;
 
 import android.content.Context;
 import android.widget.Toast;
@@ -6,7 +6,6 @@ import android.widget.Toast;
 /**
  * Created by jarvis yuen
  * Date: 2019/9/2
- * Time: 18:49
  */
 public class ToastUtil {
     public void ToastShort(Context context, String str) {
