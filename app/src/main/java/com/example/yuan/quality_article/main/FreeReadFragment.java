@@ -12,7 +12,7 @@ import com.example.yuan.quality_article.base.BaseFragment;
 public class FunReadFragment extends BaseFragment {
     @Override
     protected int getContentView() {
-        return R.layout.fragment_funread;
+        return R.layout.fragment_freeread;
     }
 
     @Override
