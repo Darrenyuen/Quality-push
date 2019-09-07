@@ -41,7 +41,7 @@ public class NavigationActivity extends BaseActivity {
         fragmentList = new LinkedList<>();
         fragmentList.add(new RecomFragment());
         fragmentList.add(new SearchFragment());
-        fragmentList.add(new FunReadFragment());
+        fragmentList.add(new FreeReadFragment());
         initView();
         Log.d(TAG, "onCreate: ");
     }
@@ -66,6 +66,11 @@ public class NavigationActivity extends BaseActivity {
             @Override
             public void onPageSelected(int i) {
                 bottomNavigationView.getMenu().getItem(i).setChecked(true);
+                if (i == 0) {
+                    toolbar.setTitle(R.string.tab_name_1);
+                } else if (i == 1) {
+                    toolbar.setTitle(R.string.tab_name_2);
+                } else toolbar.setTitle(R.string.tab_name_3);
             }
 
             @Override

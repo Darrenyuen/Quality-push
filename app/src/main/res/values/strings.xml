@@ -3,5 +3,16 @@
 
     <string name="tab_name_1">推荐</string>
     <string name="tab_name_2">搜索</string>
-    <string name="tab_name_3">趣读</string>
+    <string name="tab_name_3">闲读</string>
+
+    <string name="wow">科技资讯</string>
+    <string name="apps">趣味软件/游戏</string>
+    <string name="imrich">装备党</string>
+    <string name="funny">草根新闻</string>
+    <string name="android">Android</string>
+    <string name="diediedie">创业新闻</string>
+    <string name="thinking">独立思想</string>
+    <string name="iOS">iOS</string>
+    <string name="teamblog">团队博客</string>
+
 </resources>
