@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".CategoryActivity"></activity>
+        <activity android:name=".RecomContentActivity"></activity>
     </application>
 
 </manifest>

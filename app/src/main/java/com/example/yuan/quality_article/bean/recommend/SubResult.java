@@ -26,4 +26,8 @@ public class SubResult {
     public String getPublishedAt() {
         return publishedAt;
     }
+
+    public String getUrl() {
+        return url;
+    }
 }

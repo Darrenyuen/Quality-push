@@ -1,10 +1,14 @@
 package com.example.yuan.quality_article.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.yuan.quality_article.R;
+import com.example.yuan.quality_article.RecomContentActivity;
 import com.example.yuan.quality_article.adapter.RecomAdapter;
 import com.example.yuan.quality_article.base.BaseFragment;
 import com.example.yuan.quality_article.bean.recommend.RecommendBean;
@@ -60,6 +64,15 @@ public class RecomFragment extends BaseFragment {
             public void onComplete() {
                 listView.setAdapter(new RecomAdapter(getContext(), R.layout.item_recom, subResultList));
                 Log.d(TAG, "onComplete: ");
+            }
+        });
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getContext(), RecomContentActivity.class);
+                intent.putExtra("url", subResultList.get(position).getUrl());
+                Log.d(TAG, "onItemClick: " + subResultList.get(position).getUrl());
+                startActivity(intent);
             }
         });
     }
