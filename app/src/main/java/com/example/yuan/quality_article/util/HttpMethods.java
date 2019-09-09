@@ -2,6 +2,7 @@ package com.example.yuan.quality_article.util;
 
 import com.example.yuan.quality_article.bean.categories.Categories;
 import com.example.yuan.quality_article.bean.category.Category;
+import com.example.yuan.quality_article.bean.recommend.RecommendBean;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.util.concurrent.TimeUnit;
@@ -44,8 +45,12 @@ public class HttpMethods {
         api = retrofit.create(API.class);
     }
 
-    public void getRecommendData() {
-
+    public void getRecommendData(Observer<RecommendBean> observer) {
+        api.getRecommendData()
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(observer);
     }
 
     public void getSearchData() {

@@ -2,7 +2,7 @@ package com.example.yuan.quality_article.util;
 
 import com.example.yuan.quality_article.bean.categories.Categories;
 import com.example.yuan.quality_article.bean.category.Category;
-import com.example.yuan.quality_article.bean.Recommend;
+import com.example.yuan.quality_article.bean.recommend.RecommendBean;
 import com.example.yuan.quality_article.bean.Search;
 
 import io.reactivex.Observable;
@@ -15,7 +15,7 @@ import retrofit2.http.Path;
  */
 public interface API {
     @GET("today")
-    Observable<Recommend> getRecommendData();
+    Observable<RecommendBean> getRecommendData();
 
     @GET("search/query/listview/category/{category}/count/10/page/{page}")
     Observable<Search> getSearchData(@Path("category") String category, @Path("page") int page);
