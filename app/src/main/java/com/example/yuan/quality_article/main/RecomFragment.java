@@ -8,7 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.yuan.quality_article.R;
-import com.example.yuan.quality_article.RecomContentActivity;
+import com.example.yuan.quality_article.WebContentActivity;
 import com.example.yuan.quality_article.adapter.RecomAdapter;
 import com.example.yuan.quality_article.base.BaseFragment;
 import com.example.yuan.quality_article.bean.recommend.RecommendBean;
@@ -51,8 +51,8 @@ public class RecomFragment extends BaseFragment {
             public void onNext(RecommendBean recommendBean) {
                 Log.d(TAG, "onNext: " + recommendBean.getCategory().size() + " " + recommendBean.isError());
                 results = recommendBean.getResults();
-                subResultList = results.getAndroid();
-                Log.d(TAG, "onNext: " + results.getAndroid().size());
+                subResultList = results.getAll();
+                Log.d(TAG, "onNext: " + results.getAll().size());
             }
 
             @Override
@@ -69,7 +69,7 @@ public class RecomFragment extends BaseFragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getContext(), RecomContentActivity.class);
+                Intent intent = new Intent(getContext(), WebContentActivity.class);
                 intent.putExtra("url", subResultList.get(position).getUrl());
                 Log.d(TAG, "onItemClick: " + subResultList.get(position).getUrl());
                 startActivity(intent);

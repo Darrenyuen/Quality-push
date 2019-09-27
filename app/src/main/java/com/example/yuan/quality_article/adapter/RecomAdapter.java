@@ -47,7 +47,7 @@ public class RecomAdapter extends ArrayAdapter<SubResult> {
         }
         viewHolder.desc.setText(result.getDesc());
         viewHolder.type.setText(result.getType());
-        viewHolder.publish.setText(result.getPublishedAt());
+        viewHolder.publish.setText(result.getPublishedAt().substring(0, 10));
         return view;
     }
 
