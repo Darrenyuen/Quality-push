@@ -3,6 +3,7 @@ package com.example.yuan.quality_article.util;
 import com.example.yuan.quality_article.bean.categories.Categories;
 import com.example.yuan.quality_article.bean.category.Category;
 import com.example.yuan.quality_article.bean.recommend.RecommendBean;
+import com.example.yuan.quality_article.bean.search.SearchBean;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.util.concurrent.TimeUnit;
@@ -20,7 +21,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class HttpMethods {
 
-    private final String RECOMMENDURL = "http://gank.io/api/";
+    private final String BASE_URL = "http://gank.io/api/";
     private final long TIMEOUT = 5;
 
     private API api;
@@ -39,7 +40,7 @@ public class HttpMethods {
                 .client(client.build())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl(RECOMMENDURL)
+                .baseUrl(BASE_URL)
                 .build();
 
         api = retrofit.create(API.class);
@@ -53,8 +54,12 @@ public class HttpMethods {
                 .subscribe(observer);
     }
 
-    public void getSearchData() {
-
+    public void getSearchData(Observer<SearchBean> observer, String category, int page) {
+        api.getSearchData(category, page)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(observer);
     }
 
     public void getCategoriesData(Observer<Categories> observer) {

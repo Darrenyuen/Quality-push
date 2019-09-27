@@ -3,7 +3,7 @@ package com.example.yuan.quality_article.util;
 import com.example.yuan.quality_article.bean.categories.Categories;
 import com.example.yuan.quality_article.bean.category.Category;
 import com.example.yuan.quality_article.bean.recommend.RecommendBean;
-import com.example.yuan.quality_article.bean.Search;
+import com.example.yuan.quality_article.bean.search.SearchBean;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -18,7 +18,7 @@ public interface API {
     Observable<RecommendBean> getRecommendData();
 
     @GET("search/query/listview/category/{category}/count/10/page/{page}")
-    Observable<Search> getSearchData(@Path("category") String category, @Path("page") int page);
+    Observable<SearchBean> getSearchData(@Path("category") String category, @Path("page") int page);
 
     @GET("xiandu/categories")
     Observable<Categories> getCategoriesData();
