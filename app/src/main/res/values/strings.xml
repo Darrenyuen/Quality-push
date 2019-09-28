@@ -15,4 +15,16 @@
     <string name="iOS">iOS</string>
     <string name="teamblog">团队博客</string>
 
+    <string-array name="category">
+        <item>all</item>
+        <item>Android</item>
+        <item>iOS</item>
+        <item>休息视频</item>
+        <item>福利</item>
+        <item>拓展资源</item>
+        <item>前端</item>
+        <item>瞎推荐</item>
+        <item>App</item>
+    </string-array>
+
 </resources>
